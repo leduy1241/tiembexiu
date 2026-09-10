@@ -1,0 +1,97 @@
+import type { Product } from "@/types/product";
+
+// Names, prices and images reproduce the user-supplied design reference.
+// These are mock offers, not verified inventory, reviews or suitability advice.
+const asset = (name: string) => `/assets/reference/product-${name}.webp`;
+export const products: Product[] = [
+  {
+    id: "demo-01",
+    name: "Bỉm Merries nội địa Nhật (size M, 6–11kg, 64 miếng)",
+    category: "diapers",
+    ages: ["6-12", "1-2"],
+    price: 369000,
+    oldPrice: 410000,
+    image: asset("diapers"),
+    rating: 4.9,
+    reviewCount: 256,
+    bestSeller: true,
+    isDemo: true,
+  },
+  {
+    id: "demo-02",
+    name: "Sữa Aptamil Profutura số 3 (từ 1 tuổi, 800g)",
+    category: "nutrition",
+    ages: ["1-2", "2-plus"],
+    price: 895000,
+    image: asset("nutrition"),
+    rating: 4.8,
+    reviewCount: 189,
+    isDemo: true,
+  },
+  {
+    id: "demo-03",
+    name: "Bộ ăn dặm silicone kèm thìa (5 món)",
+    category: "feeding",
+    ages: ["6-12", "1-2", "2-plus"],
+    price: 219000,
+    oldPrice: 259000,
+    image: asset("feeding"),
+    rating: 4.9,
+    reviewCount: 124,
+    isDemo: true,
+  },
+  {
+    id: "demo-04",
+    name: "Nước rửa bình sữa Pigeon (700ml)",
+    category: "care",
+    ages: ["0-6", "6-12", "1-2", "2-plus"],
+    price: 165000,
+    image: asset("cleanser"),
+    rating: 4.8,
+    reviewCount: 98,
+    isDemo: true,
+  },
+  {
+    id: "demo-05",
+    name: "Khăn ướt Mamamy (80 tờ)",
+    category: "care",
+    ages: ["0-6", "6-12", "1-2", "2-plus"],
+    price: 49000,
+    oldPrice: 59000,
+    image: asset("wipes"),
+    rating: 4.9,
+    reviewCount: 312,
+    bestSeller: true,
+    isDemo: true,
+  },
+  {
+    id: "demo-06",
+    name: "Xe đẩy gấp gọn cao cấp (Baobaohao V5)",
+    category: "essentials",
+    ages: ["6-12", "1-2", "2-plus"],
+    price: 1490000,
+    image: asset("stroller"),
+    rating: 4.8,
+    reviewCount: 76,
+    isDemo: true,
+  },
+  {
+    id: "demo-07",
+    name: "Combo chăm sóc đồ dùng cho mẹ & bé",
+    category: "mother",
+    ages: ["0-6", "6-12", "1-2", "2-plus"],
+    price: 199000,
+    oldPrice: 214000,
+    image: asset("cleanser"),
+    rating: 4.9,
+    reviewCount: 42,
+    isDemo: true,
+  },
+];
+
+export const formatPrice = (price: number) =>
+  new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+    maximumFractionDigits: 0,
+  }).format(price);

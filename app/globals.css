@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* Brand and UI tokens. Change these values to update the whole site. */
+:root {
+  --brand-coral: #f17e74;
+  --brand-coral-soft: #fff0e9;
+  --brand-sage: #87ac94;
+  --brand-sage-soft: #e9f2eb;
+  --background: #fffdf9;
+  --surface: #ffffff;
+  --foreground: #3e332d;
+  --muted: #75675e;
+  --border: #eee4dc;
+  /* Darker coral and sage support readable text and future CTA buttons. */
+  --action: #b84940;
+  --action-hover: #983c35;
+  --on-action: #ffffff;
+  --sage-foreground: #386149;
+  --focus: #365b45;
+  --ui-radius-card: 1.5rem;
+  --ui-radius-control: 0.75rem;
+  --ui-shadow-card: 0 8px 32px rgb(68 56 49 / 5%);
+  --font-body: Arial, Helvetica, sans-serif;
+  --tone-blue: #eaf4f8;
+  --tone-blue-ink: #396a85;
+  --tone-yellow: #fff4db;
+  --tone-yellow-ink: #906510;
+  --tone-lavender: #f0edf8;
+  --tone-lavender-ink: #695a87;
+  --star-color: #a97413;
+  --shadow-coral: rgb(184 73 64 / 12%);
+  --overlay-white-hover: rgb(255 255 255 / 13%);
+  --overlay-white-subtle: rgb(255 255 255 / 7%);
+  --hero-base: #f6eee5;
+  --hero-cream: #fbf4ec;
+  --hero-cream-translucent: rgb(251 244 236 / 90%);
+  --hero-cream-transparent: rgb(251 244 236 / 0%);
+  --hero-eyebrow-color: #8a6b50;
+  --hero-note-color: #604c3c;
+  --caption-background: rgb(255 253 249 / 75%);
+  --category-background: #faf3eb;
+  --product-background: #faf6f0;
+  --promotion-peach: #fbe9df;
+  --promotion-sage: #e5eee5;
+  --overlay-white-soft: rgb(255 255 255 / 50%);
+  --footer-background: #fbf7f1;
+  --shadow-floating: rgb(68 56 49 / 12%);
+  --shadow-modal: rgb(68 56 49 / 20%);
+  --backdrop: rgb(43 36 30 / 40%);
+}
+
+@theme inline {
+  --color-coral: var(--brand-coral);
+  --color-coral-soft: var(--brand-coral-soft);
+  --color-sage: var(--brand-sage);
+  --color-sage-soft: var(--brand-sage-soft);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
+  --color-on-action: var(--on-action);
+  --color-sage-foreground: var(--sage-foreground);
+  --color-focus: var(--focus);
+  --font-sans: var(--font-body);
+  --radius-card: var(--ui-radius-card);
+  --radius-control: var(--ui-radius-control);
+  --shadow-card: var(--ui-shadow-card);
+}
+
+@layer base {
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 4px;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+  }
+  body {
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  input {
+    font: inherit;
+  }
+  button,
+  a,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  button,
+  a {
+    touch-action: manipulation;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  a {
+    text-decoration: none;
+  }
+  svg {
+    flex-shrink: 0;
+  }
+  button,
+  a {
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      box-shadow 160ms ease;
+  }
+  input {
+    min-width: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--brand-coral-soft);
+    color: var(--action);
+  }
+}
