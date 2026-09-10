@@ -1,8 +1,10 @@
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
 export const siteUrl = new URL(
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tiembexiu.store",
+  configuredSiteUrl || "https://tiembexiu.store",
 );
 
 export const siteName = "Tiệm Bé Xíu";
